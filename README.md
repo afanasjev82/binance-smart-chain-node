@@ -2,10 +2,19 @@
 
 ## QuickStart
 
+Environment variable **NETWORK** possible values: ***mainnet***, ***testnet***
+
 ```
-docker run -d -v /data/bsc:/root --name binance-smart-chain-node \
--p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 127.0.0.1:6060:6060 -p 30311:30311 -p 30311:30311/udp \
-vlddm/binance-smart-chain-node:latest --syncmode snap --cache 4096
+docker run -d \
+    --name binance-smart-chain-node \
+    -e NETWORK=mainnet \
+    -v /data/bsc:/root \
+    -p 8545:8545 \
+    -p 8546:8546 \
+    -p 6060:6060 \
+    -p 30311:30311 \
+    -p 30311:30311/udp \
+        afanasjev/binance-smart-chain-node:latest --syncmode snap --cache 4096
 ```
 
 Blockchain data will be stored at `/data/bsc` folder.
