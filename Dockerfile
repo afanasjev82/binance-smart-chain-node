@@ -5,7 +5,7 @@ RUN apt-get update -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV VERSION=1.1.0-beta
+ENV VERSION=1.1.2
 ENV NETWORK=mainnet
 
 RUN curl --silent "https://api.github.com/repos/binance-chain/bsc/releases/tags/v${VERSION}" | \
